@@ -1,5 +1,11 @@
-function Get-ZPTemplate {
-    Param($Identity)
+function Get-ZPResource {
+    Param(
+        [Parameter(Mandatory=$false)]
+        $Identity,
+
+        [Parameter(Mandatory = $false, ParameterSetName = "Hidden")]
+        [Hashtable]$Parameters    
+    )
 
     $output = Get-ZPCommonFunction
     @{
@@ -9,12 +15,32 @@ function Get-ZPTemplate {
     }
 }
 
+function Set-ZPResource {
+    Param(
+        [Parameter(Mandatory=$false)]
+        $Identity,
 
-# Get Example
-# Set Example
-# New Example
-# Remove Example
-# Add Example
-# All in all - CRUD
-# Split(";",",")/trim example - AddGroupMember
-#
+        [Parameter(Mandatory = $false, ParameterSetName = "Hidden")]
+        [Hashtable]$Parameters    
+    )
+}
+
+function New-ZPResource {
+    Param(
+        [Parameter(Mandatory=$false)]
+        $Identity,
+
+        [Parameter(Mandatory = $false, ParameterSetName = "Hidden")]
+        [Hashtable]$Parameters    
+    )
+}
+
+function Remove-ZPResource {
+    Param(
+        [Parameter(Mandatory=$false)]
+        $Identity,
+
+        [Parameter(Mandatory = $false, ParameterSetName = "Hidden")]
+        [Hashtable]$Parameters    
+    )
+}

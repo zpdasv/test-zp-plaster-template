@@ -11,8 +11,10 @@ function New-ZPProviderXML {
         [string]$AssemblyType = "PowerShell",
 
         [Parameter(Mandatory=$true)]
-        [string]$SourcePath
+        [string]$SourcePath,
+
+        [hashtable]$Config
     )
 
-    Write-Host "This should create $($PackageName).providertype.provider.xml for assemblytype $($AssembltyType) and inventory providers from $($SourcePath)"
+    Write-Host "This should create $($PackageName).providertype.provider.xml for assemblytype $($AssemblyType) and inventory providers from $($SourcePath)"
 }

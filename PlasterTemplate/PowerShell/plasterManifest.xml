@@ -81,7 +81,7 @@ Start creating Zervicepoint activities
         <message>
 Start creating Zervicepoint data sources
         </message>
-
+        <!-- DropDown.ZPResource-->
         <file source='ZP.Template\Data sources'
               destination='${PLASTER_PARAM_ModuleName}\Data sources' />
         <file source='ZP.Template\Data sources\DropDown.ZPResource'
@@ -99,6 +99,27 @@ Start creating Zervicepoint data sources
 
         <templateFile source='ZP.Template\Data sources\DropDown.ZPResource\DropDown.ZPResource.psm1'
                       destination = '${PLASTER_PARAM_ModuleName}\Data sources\DropDown.ZPResource\DropDown.ZPResource.psm1' />
+
+        <!-- WebService.ZP.Template-->
+        <file source='ZP.Template\Data sources\WebService.ZP.Template'
+              destination='${PLASTER_PARAM_ModuleName}\Data sources\WebService.${PLASTER_PARAM_ModuleName}' />
+
+                      <templateFile source='ZP.Template\Data sources\WebService.ZP.Template\WebService.ZP.Template.psd1'
+                      destination = '${PLASTER_PARAM_ModuleName}\Data sources\WebService.${PLASTER_PARAM_ModuleName}\WebService.${PLASTER_PARAM_ModuleName}.psd1' />
+            <modify path= '${PLASTER_PARAM_ModuleName}\Data sources\WebService.${PLASTER_PARAM_ModuleName}\WebService.${PLASTER_PARAM_ModuleName}.psd1'
+                    encoding='UTF8'>
+                    <replace>
+                        <original>00000000-0000-0000-0000-000000000000</original>
+                        <substitute expand='true'>$PLASTER_Guid3</substitute>
+                    </replace>
+                    <replace>
+                        <original>ZP.Template</original>
+                        <substitute expand='true'>$PLASTER_PARAM_ModuleName</substitute>
+                    </replace>
+            </modify>
+
+        <templateFile source='ZP.Template\Data sources\WebService.ZP.Template\WebService.ZP.Template.psm1'
+                      destination = '${PLASTER_PARAM_ModuleName}\Data sources\${PLASTER_PARAM_ModuleName}.ZP.Template\${PLASTER_PARAM_ModuleName}.ZP.Template.psm1' />
 
         <file source='ZP.Template\Shared modules'
               destination='${PLASTER_PARAM_ModuleName}\Shared modules' />

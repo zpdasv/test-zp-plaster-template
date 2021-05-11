@@ -32,9 +32,7 @@ Invoke-Plaster -TemplatePath C:\temp\test-zp-plaster-template\PlasterTemplate\Po
 
 # How to make plugin available in Zervicepoint?
 
-To do this we must setup a provider.xml file that will be read by the ProvisioningSystem and ProvisioningSystemInventory services.
-
-You will need to create a plugin.<*providertype*>.provider.xml in either C:\Program Files\Zipper\Zervicepoint\ProvisioningSystem\ or ..\Zipper\Zervicepoint\ClientWebService\
+To do this we must setup a provider file that can be inventoried by ProvisioningSystem or ProvisioningSystemInventory
 
 ```powershell
 Import-Module C:\temp\test-zp-plaster-template\tools\SetupProviderXML.psm1
