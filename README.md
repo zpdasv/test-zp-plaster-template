@@ -21,12 +21,13 @@ Import-Module -Name Plaster
 ```
 
 ```powershell
+mkdir C:\temp
 cd C:\temp
 git clone https://github.com/zpdasv/test-zp-plaster-template.git
 ```
 
 ```powershell
-Invoke-Plaster -TemplatePath C:\temp\test-zp-plaster-template\src\PlasterTemplate\PowerShell -DestinationPath C:\Program Files\Zipper\Zervicepoint\Provider extensions\
+Invoke-Plaster -TemplatePath C:\temp\test-zp-plaster-template\PlasterTemplate\PowerShell -DestinationPath "C:\Program Files\Zipper\Zervicepoint\Provider extensions\"
 ```
 
 # How to make plugin available in Zervicepoint?
