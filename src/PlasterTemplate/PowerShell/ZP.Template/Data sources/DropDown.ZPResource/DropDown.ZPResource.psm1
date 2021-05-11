@@ -1,6 +1,6 @@
 function Search($config, $search, $category)
 {    
-     @("Computer1","Computer2","Computer3") | Select-Object @{
+     @("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday") | Select-Object @{
         Name="Id";
         Expression = {
             $_

@@ -1,4 +1,4 @@
-function Get-ZPPersonLookupUser {
+function Get-ZPResource {
     Param($Identity)
     
     @{

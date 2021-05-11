@@ -9,7 +9,7 @@
 @{
 
     # Script module or binary module file associated with this manifest.
-    RootModule = 'DropDown.ZPComputer.psm1'
+    RootModule = 'DropDown.ZPResource.psm1'
     
     # Version number of this module.
     ModuleVersion = '0.0.1'
@@ -66,7 +66,7 @@
     # FormatsToProcess = @()
     
     # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
-    NestedModules = @("..\..\Shared modules\DropDown.ZPComputer\DropDown.ZPComputer.psd1","DropDown.ZPComputer.psm1")
+    NestedModules = @("..\..\Shared modules\DropDown.ZPResource\DropDown.ZPResource.psd1","DropDown.ZPResource.psm1")
     
     # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
     FunctionsToExport = @('Search','Validate','GetCategories','GetDefault')
@@ -87,7 +87,7 @@
     # ModuleList = @()
     
     # List of all files packaged with this module
-    FileList = @('DropDown.ZPComputer.psd1','DropDown.ZPComputer.psm1')
+    FileList = @('DropDown.ZPResource.psd1','DropDown.ZPResource.psm1')
     
     # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
     PrivateData = @{
