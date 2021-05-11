@@ -66,7 +66,7 @@
     # FormatsToProcess = @()
     
     # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
-    NestedModules = @("..\..\Shared modules\DropDown.ZPResource\DropDown.ZPResource.psd1","DropDown.ZPResource.psm1")
+    # NestedModules = @("..\..\Shared modules\DropDown.ZPResource\DropDown.ZPResource.psd1","DropDown.ZPResource.psm1")
     
     # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
     FunctionsToExport = @('Search','Validate','GetCategories','GetDefault')
