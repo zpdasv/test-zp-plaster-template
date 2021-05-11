@@ -8,7 +8,7 @@ function New-ZPProviderXML {
         [string]$ProviderType,
 
         [ValidateSet("PowerShell","DotNet")]
-        [string]$AssembltyType = "PowerShell",
+        [string]$AssemblyType = "PowerShell",
 
         [Parameter(Mandatory=$true)]
         [string]$SourcePath
