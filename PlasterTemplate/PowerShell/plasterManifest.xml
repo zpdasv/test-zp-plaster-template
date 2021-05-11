@@ -29,7 +29,7 @@
     </parameters>
     <content>
         <message>&#10;&#10;Scaffolding your PowerShell Module...&#10;&#10;&#10;</message>
-
+<!--
         <newModuleManifest destination='${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}.psd1'
                            moduleVersion='$PLASTER_PARAM_Version'
                            rootModule='${PLASTER_PARAM_ModuleName}.psm1'
@@ -39,7 +39,7 @@
 
         <file source='ZP.Template\ZP.Template.psm1'
               destination='${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}.psm1' />
-
+-->
         <message>
 Start creating Zervicepoint activities
         </message>
@@ -126,16 +126,10 @@ Start creating Zervicepoint data sources
         <templateFile source='ZP.Template\Shared modules\ZP.Template.Common\ZP.Template.Common.psm1'
                       destination = '${PLASTER_PARAM_ModuleName}\Shared modules\${PLASTER_PARAM_ModuleName}.Common\${PLASTER_PARAM_ModuleName}.Common.psm1' />
 
-        <file source='ZP.Template\config.json'
-              destination='${PLASTER_PARAM_ModuleName}\config.json' />
-
         <message>
 Create Tests for '$PLASTER_PARAM_ModuleName}'.
         </message>
-
-        <file source='ZP.Template\ZP.Template.Tests.ps1'
-            destination='${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}.Tests.ps1' />
-
+        
         <file source='ZP.Template\Activities\Activity.ZP.Template\Activity.ZP.Template.Tests.ps1'
             destination='${PLASTER_PARAM_ModuleName}\Activities\Activity.${PLASTER_PARAM_ModuleName}\Activity.${PLASTER_PARAM_ModuleName}.Tests.ps1' />
         
