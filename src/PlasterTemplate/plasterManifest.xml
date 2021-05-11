@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plasterManifest schemaVersion="0.4" xmlns="http://www.microsoft.com/schemas/PowerShell/Plaster/v1">
+    <metadata>
+        <id>71917604-b9c2-49f2-9582-c8d7897941be</id>
+        <name>NewModule</name>
+        <title>New Module</title>
+        <description>Scaffolds the files required for a PowerShell module.</description>
+        <version>1.0.0</version>
+        <tags>Module, ModuleManifest, Build</tags>
+    </metadata>
+    <parameters>
+        <parameter name='ModuleName'
+                   type='text'
+                   prompt='Enter the name of the module'/>
+
+        <parameter name='ModuleDesc'
+                   type='text'
+                   prompt='Enter a description of the module'/>
+
+        <parameter name='Version'
+                   type='text'
+                   prompt='Enter the version number of the module'
+                   default='0.1.0'/>
+
+        <parameter name='Author'
+                   type='text'
+                   prompt='Enter the author of this module'
+                   default='BUILDAUTHOR'/>
+    </parameters>
+    <content>
+        <message>&#10;&#10;Scaffolding your PowerShell Module...&#10;&#10;&#10;</message>
+
+        <newModuleManifest destination='${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}.psd1'
+                           moduleVersion='$PLASTER_PARAM_Version'
+                           rootModule='${PLASTER_PARAM_ModuleName}.psm1'
+                           author='$PLASTER_PARAM_Author'
+                           description='$PLASTER_PARAM_ModuleDesc'                           
+                           encoding='UTF8-NoBOM'/>
+
+        <file source='ZP.Template\ZP.Template.psm1'
+              destination='${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}.psm1' />
+
+        <message>
+Start creating Zervicepoint activities
+        </message>
+
+        <file source='ZP.Template\Activities'
+              destination='${PLASTER_PARAM_ModuleName}\Activities' />
+              
+        <file source='ZP.Template\Activities\Activity.ZP.Template'
+              destination='${PLASTER_PARAM_ModuleName}\Activities\Activity.${PLASTER_PARAM_ModuleName}' />
+
+        <templateFile source='ZP.Template\Activities\Activity.ZP.Template\Activity.ZP.Template.psd1'
+                      destination = '${PLASTER_PARAM_ModuleName}\Activities\Activity.${PLASTER_PARAM_ModuleName}\Activity.${PLASTER_PARAM_ModuleName}.psd1'
+                      encoding='UTF8' />
+            <modify path= '${PLASTER_PARAM_ModuleName}\Activities\Activity.${PLASTER_PARAM_ModuleName}\Activity.${PLASTER_PARAM_ModuleName}.psd1'
+                    encoding='UTF8'>
+                    <replace>
+                        <original>ZP.Template</original>
+                        <substitute expand='true'>$PLASTER_PARAM_ModuleName</substitute>
+                    </replace>
+            </modify>
+
+            <modify path= '${PLASTER_PARAM_ModuleName}\Activities\Activity.${PLASTER_PARAM_ModuleName}\Activity.${PLASTER_PARAM_ModuleName}.psd1'
+                    encoding='UTF8'>
+                    <replace>
+                        <original>00000000-0000-0000-0000-000000000000</original>
+                        <substitute expand='true'>$PLASTER_Guid1</substitute>
+                    </replace>
+            </modify>
+
+        <templateFile source='ZP.Template\Activities\Activity.ZP.Template\en-US'
+                      destination = '${PLASTER_PARAM_ModuleName}\Activities\Activity.${PLASTER_PARAM_ModuleName}\en-US' />
+
+        <templateFile source='ZP.Template\Activities\Activity.ZP.Template\en-US\Activity.ZP.Template.psd1'
+                      destination = '${PLASTER_PARAM_ModuleName}\Activities\Activity.${PLASTER_PARAM_ModuleName}\en-US\Activity.${PLASTER_PARAM_ModuleName}.psd1' />
+
+        <templateFile source='ZP.Template\Activities\Activity.ZP.Template\Activity.ZP.Template.psm1'
+                      destination = '${PLASTER_PARAM_ModuleName}\Activities\Activity.${PLASTER_PARAM_ModuleName}\Activity.${PLASTER_PARAM_ModuleName}.psm1' />
+
+        <message>
+Start creating Zervicepoint data sources
+        </message>
+
+        <file source='ZP.Template\Data sources'
+              destination='${PLASTER_PARAM_ModuleName}\Data sources' />
+        <file source='ZP.Template\Data sources\DropDown.ZPComputer'
+              destination='${PLASTER_PARAM_ModuleName}\Data sources\DropDown.ZPComputer' />
+
+        <templateFile source='ZP.Template\Data sources\DropDown.ZPComputer\DropDown.ZPComputer.psd1'
+                      destination = '${PLASTER_PARAM_ModuleName}\Data sources\DropDown.ZPComputer\DropDown.ZPComputer.psd1' />
+            <modify path= '${PLASTER_PARAM_ModuleName}\Data sources\DropDown.ZPComputer\DropDown.ZPComputer.psd1'
+                    encoding='UTF8'>
+                    <replace>
+                        <original>00000000-0000-0000-0000-000000000000</original>
+                        <substitute expand='true'>$PLASTER_Guid2</substitute>
+                    </replace>
+            </modify>
+
+        <templateFile source='ZP.Template\Data sources\DropDown.ZPComputer\DropDown.ZPComputer.psm1'
+                      destination = '${PLASTER_PARAM_ModuleName}\Data sources\DropDown.ZPComputer\DropDown.ZPComputer.psm1' />
+
+        <file source='ZP.Template\Shared modules'
+              destination='${PLASTER_PARAM_ModuleName}\Shared modules' />
+        <file source='ZP.Template\Shared modules\DropDown.ZPComputer'
+              destination='${PLASTER_PARAM_ModuleName}\Shared modules\DropDown.ZPComputer' />
+
+        <templateFile source='ZP.Template\Shared modules\DropDown.ZPComputer\DropDown.ZPComputer.psd1'
+                      destination = '${PLASTER_PARAM_ModuleName}\Shared modules\DropDown.ZPComputer\DropDown.ZPComputer.psd1' />
+            <modify path= '${PLASTER_PARAM_ModuleName}\Shared modules\DropDown.ZPComputer\DropDown.ZPComputer.psd1'
+                    encoding='UTF8'>
+                    <replace>
+                        <original>00000000-0000-0000-0000-000000000000</original>
+                        <substitute expand='true'>$PLASTER_Guid3</substitute>
+                    </replace>
+            </modify>
+        
+        <templateFile source='ZP.Template\Shared modules\DropDown.ZPComputer\DropDown.ZPComputer.psm1'
+                      destination = '${PLASTER_PARAM_ModuleName}\Shared modules\DropDown.ZPComputer\DropDown.ZPComputer.psm1' />
+
+        <file source='ZP.Template\Shared modules\ZP.Template.Common'
+              destination='${PLASTER_PARAM_ModuleName}\Shared modules\${PLASTER_PARAM_ModuleName}.Common' />
+        
+        <templateFile source='ZP.Template\Shared modules\ZP.Template.Common\ZP.Template.Common.psd1'
+                      destination = '${PLASTER_PARAM_ModuleName}\Shared modules\${PLASTER_PARAM_ModuleName}.Common\${PLASTER_PARAM_ModuleName}.Common.psd1' />
+            <modify path= '${PLASTER_PARAM_ModuleName}\Shared modules\${PLASTER_PARAM_ModuleName}.Common\${PLASTER_PARAM_ModuleName}.Common.psd1'
+                    encoding='UTF8'>
+                    <replace>
+                        <original>ZP.Template</original>
+                        <substitute expand='true'>$PLASTER_PARAM_ModuleName</substitute>
+                    </replace>
+            </modify>
+            <modify path= '${PLASTER_PARAM_ModuleName}\Shared modules\${PLASTER_PARAM_ModuleName}.Common\${PLASTER_PARAM_ModuleName}.Common.psd1'
+                    encoding='UTF8'>
+                    <replace>
+                        <original>00000000-0000-0000-0000-000000000000</original>
+                        <substitute expand='true'>$PLASTER_Guid4</substitute>
+                    </replace>
+            </modify>
+
+        <templateFile source='ZP.Template\Shared modules\ZP.Template.Common\ZP.Template.Common.psm1'
+                      destination = '${PLASTER_PARAM_ModuleName}\Shared modules\${PLASTER_PARAM_ModuleName}.Common\${PLASTER_PARAM_ModuleName}.Common.psm1' />
+
+        <file source='ZP.Template\config.json'
+              destination='${PLASTER_PARAM_ModuleName}\config.json' />
+
+        <message>
+Create Tests for '$PLASTER_PARAM_ModuleName}'.
+        </message>
+
+        <file source='ZP.Template\ZP.Template.Tests.ps1'
+            destination='${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}.Tests.ps1' />
+
+        <file source='ZP.Template\Activities\Activity.ZP.Template\Activity.ZP.Template.Tests.ps1'
+            destination='${PLASTER_PARAM_ModuleName}\Activities\Activity.${PLASTER_PARAM_ModuleName}\Activity.${PLASTER_PARAM_ModuleName}.Tests.ps1' />
+
+        <message>
+Add nuspec file.
+        </message>
+
+        <templateFile source='ZP.Template\ZP.Template.nuspec'
+                      destination = '${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}.nuspec' />
+            <modify path= '${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}.nuspec'
+                    encoding='UTF8'>
+                    <replace>
+                        <original>ZP.Template</original>
+                        <substitute expand='true'>$PLASTER_PARAM_ModuleName</substitute>
+                    </replace>
+            </modify>
+
+        <message>
+Your new Zervicepoint Plugin module project '$PLASTER_PARAM_ModuleName' has been created.
+        </message>
+
+        <message>
+Done!
+        </message>
+
+
+    </content>
+</plasterManifest>

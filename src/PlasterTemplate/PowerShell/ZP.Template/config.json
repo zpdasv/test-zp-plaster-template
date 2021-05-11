@@ -1,0 +1,10 @@
+{
+    "ClientWebService": {
+        "DomainController": "dc01.example.com",
+        "SearchBase": "OU=Users,DC=example,DC=com"
+    },
+    "ProvisioningSystem": {
+        "DomainController": "dc01.example.com",
+        "SearchBase": "OU=Users,DC=example,DC=com"
+    }
+}
